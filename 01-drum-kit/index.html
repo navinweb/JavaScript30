@@ -9,7 +9,6 @@
 
 <body>
 
-
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
@@ -61,8 +60,7 @@
 
   <script>
     function playSound(e) {
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      const key  = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
       if (!audio) return;
 
@@ -77,7 +75,7 @@
     }
 
     window.addEventListener('keydown', playSound);
-    const keys = document.querySelectorAll('.key');
+    const keys= document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
   </script>
 
